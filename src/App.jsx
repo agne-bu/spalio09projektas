@@ -89,7 +89,7 @@ function GeneratedPoster({ movie, index }) {
   )
 }
 
-function MovieCard({ movie, index, onSelect }) {
+function MovieCard({ movie, index, onSelect, isSaved, onToggleSaved }) {
   const genres = getGenres()
 
   return (
@@ -111,6 +111,9 @@ function MovieCard({ movie, index, onSelect }) {
         <GeneratedPoster movie={movie} index={index} />
         <span className="poster-rating"><span aria-hidden="true">★</span> {movie.rating.toFixed(1)} <small>IMDb</small></span>
         <span className="poster-open-hint">Filmo informacija</span>
+        <button className={`save-movie-button ${isSaved ? 'saved' : ''}`} type="button" aria-label={isSaved ? `Pašalinti ${movie.title} iš mano sąrašo` : `Įtraukti ${movie.title} į mano sąrašą`} aria-pressed={isSaved} onClick={(event) => { event.stopPropagation(); onToggleSaved(movie) }}>
+          <BookmarkIcon /><span>{isSaved ? 'Išsaugota' : 'Išsaugoti'}</span>
+        </button>
       </div>
       <div className="movie-info">
         <div className="movie-facts">
@@ -135,11 +138,27 @@ function App() {
   const [searchQuery, setSearchQuery] = useState('')
   const [activeCategory, setActiveCategory] = useState('all')
   const [selectedMovie, setSelectedMovie] = useState(null)
+  const [savedMovieIds, setSavedMovieIds] = useState(() => {
+    try {
+      const saved = JSON.parse(localStorage.getItem('moviematch-saved-movies') || '[]')
+      return Array.isArray(saved) ? saved : []
+    } catch { return [] }
+  })
+  const [showSavedMovies, setShowSavedMovies] = useState(false)
   const filteredMovies = movies.filter((movie) => {
     const matchesSearch = movie.title.toLocaleLowerCase('lt').includes(searchQuery.trim().toLocaleLowerCase('lt'))
     const matchesCategory = activeCategory === 'all' || getGenres().includes('Siaubo')
-    return matchesSearch && matchesCategory
+    const matchesList = !showSavedMovies || savedMovieIds.includes(movie.id)
+    return matchesSearch && matchesCategory && matchesList
   })
+
+  function toggleSavedMovie(movie) {
+    setSavedMovieIds((current) => {
+      const updated = current.includes(movie.id) ? current.filter((id) => id !== movie.id) : [...current, movie.id]
+      localStorage.setItem('moviematch-saved-movies', JSON.stringify(updated))
+      return updated
+    })
+  }
 
   useEffect(() => {
     if (!selectedMovie) return undefined
@@ -203,9 +222,9 @@ function App() {
         </a>
 
         <nav className="main-nav" aria-label="Pagrindinė navigacija">
-          <a href="#pradzia" className="nav-item active" aria-current="page"><HomeIcon /><span>Pradžia</span></a>
-          <a href="#filmai" className={`nav-item ${searchOpen ? 'active' : ''}`} onClick={() => setSearchOpen(true)}><SearchIcon /><span>Ieškoti filmų</span></a>
-          <a href="#filmai" className="nav-item"><BookmarkIcon /><span>Mano sąrašai</span></a>
+          <a href="#pradzia" className={`nav-item ${!showSavedMovies && !searchOpen ? 'active' : ''}`} aria-current={!showSavedMovies && !searchOpen ? 'page' : undefined} onClick={() => setShowSavedMovies(false)}><HomeIcon /><span>Pradžia</span></a>
+          <a href="#filmai" className={`nav-item ${searchOpen ? 'active' : ''}`} onClick={() => { setShowSavedMovies(false); setSearchOpen(true) }}><SearchIcon /><span>Ieškoti filmų</span></a>
+          <a href="#filmai" className={`nav-item ${showSavedMovies ? 'active' : ''}`} aria-current={showSavedMovies ? 'page' : undefined} onClick={() => { setShowSavedMovies(true); setSearchOpen(false); setSearchQuery('') }}><BookmarkIcon /><span>Mano sąrašai</span></a>
         </nav>
         <div className="account-actions">
           {currentUser && <span className="account-name">{currentUser}</span>}
@@ -243,14 +262,14 @@ function App() {
 
       <section className="movies-section" id="filmai" aria-labelledby="movies-title">
         <div className="section-heading">
-          <h2 id="movies-title">{searchQuery ? <>Paieškos <em>rezultatai</em></> : <>Top 10 <em>siaubo filmų</em></>} <span className="section-ghost" aria-hidden="true">☻</span></h2>
-          <a className="view-all" href="#filmai">Žiūrėti visus <span aria-hidden="true">→</span></a>
+          <h2 id="movies-title">{showSavedMovies ? <>Mano <em>sąrašai</em></> : searchQuery ? <>Paieškos <em>rezultatai</em></> : <>Top 10 <em>siaubo filmų</em></>} <span className="section-ghost" aria-hidden="true">☻</span></h2>
+          {!showSavedMovies && <a className="view-all" href="#filmai">Žiūrėti visus <span aria-hidden="true">→</span></a>}
         </div>
-        <div className="catalog-filters" aria-label="Filmų kategorijos">
+        {!showSavedMovies && <div className="catalog-filters" aria-label="Filmų kategorijos">
           <button type="button" className={activeCategory === 'all' ? 'selected' : ''} onClick={() => setActiveCategory('all')}>Visi filmai</button>
           <button type="button" className={activeCategory === 'horror' ? 'selected' : ''} onClick={() => setActiveCategory('horror')}>Horror Movies</button>
-        </div>
-        {searchOpen && (
+        </div>}
+        {searchOpen && !showSavedMovies && (
           <form className="movie-search" role="search" onSubmit={(event) => event.preventDefault()}>
             <SearchIcon />
             <input
@@ -265,9 +284,9 @@ function App() {
           </form>
         )}
         <div className="movie-grid">
-          {filteredMovies.map((movie) => <MovieCard key={movie.title} movie={movie} index={movies.indexOf(movie)} onSelect={setSelectedMovie} />)}
+          {filteredMovies.map((movie) => <MovieCard key={movie.title} movie={movie} index={movies.indexOf(movie)} onSelect={setSelectedMovie} isSaved={savedMovieIds.includes(movie.id)} onToggleSaved={toggleSavedMovie} />)}
         </div>
-        {filteredMovies.length === 0 && <p className="no-movies">Filmų pagal „{searchQuery}“ nerasta.</p>}
+        {filteredMovies.length === 0 && <p className="no-movies">{showSavedMovies ? 'Sąrašas dar tuščias. Išsaugokite patikusius filmus paspaudę „Išsaugoti“.' : `Filmų pagal „${searchQuery}“ nerasta.`}</p>}
       </section>
 
       {selectedMovie && (
@@ -288,6 +307,7 @@ function App() {
               <h3>Aprašymas</h3>
               <p>{movieDescriptions[movies.indexOf(selectedMovie)]}</p>
               <a className="imdb-detail-link" href={`https://www.imdb.com/title/${selectedMovie.id}/`} target="_blank" rel="noreferrer">Peržiūrėti IMDb informaciją ↗</a>
+              <button className="detail-save-button" type="button" aria-pressed={savedMovieIds.includes(selectedMovie.id)} onClick={() => toggleSavedMovie(selectedMovie)}>{savedMovieIds.includes(selectedMovie.id) ? '✓ Pašalinti iš mano sąrašo' : '+ Įtraukti į mano sąrašą'}</button>
             </div>
           </section>
         </div>
