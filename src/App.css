@@ -117,6 +117,10 @@
 .poster-rating small { color: #d4cad1; font-size: 9px; font-weight: 700; letter-spacing: .7px; }
 .poster-open-hint { position: absolute; z-index: 3; right: 12px; bottom: 12px; padding: 6px 9px; border-radius: 9px; color: #fff; background: rgba(8, 8, 12, .68); font-size: 10px; opacity: 0; transition: opacity .2s ease; }
 .movie-card:hover .poster-open-hint, .movie-card:focus-visible .poster-open-hint { opacity: 1; }
+.save-movie-button { position: absolute; z-index: 4; top: 12px; right: 12px; display: inline-flex; min-height: 36px; align-items: center; gap: 6px; padding: 0 10px; border: 1px solid rgba(255,255,255,.22); border-radius: 11px; color: #fff5eb; background: rgba(8,8,12,.78); font-size: 11px; font-weight: 700; cursor: pointer; backdrop-filter: blur(8px); }
+.save-movie-button svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linejoin: round; }
+.save-movie-button.saved { min-height: 25px; gap: 3px; padding: 0 6px; border-color: rgba(255,132,53,.75); border-radius: 8px; color: #ffae70; background: rgba(74,31,18,.88); font-size: 9px; }
+.save-movie-button.saved svg { width: 11px; height: 11px; }
 .movie-poster::before { position: absolute; z-index: 1; inset: 0; content: ''; background: linear-gradient(180deg, rgba(5, 7, 11, .03) 30%, rgba(5, 7, 11, .24) 58%, rgba(5, 7, 11, .81) 100%); }
 .poster-grain { position: absolute; z-index: 2; inset: 0; pointer-events: none; opacity: .14; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.3'/%3E%3C/svg%3E"); mix-blend-mode: screen; }
 .poster-art { position: absolute; z-index: 0; inset: 0; transition: transform .35s ease; }
@@ -160,8 +164,8 @@
 .movie-detail-copy > p { margin: 0; color: #d0c7d0; font-size: 14px; line-height: 1.75; }
 .imdb-detail-link { display: inline-block; margin-top: 24px; color: #ff9b50; font-size: 13px; font-weight: 700; text-decoration: none; }
 .imdb-detail-link:hover { color: #ffc287; }
-.add-to-list { position: absolute; right: 13px; bottom: 13px; display: inline-flex; min-height: 43px; align-items: center; gap: 7px; padding: 0 14px; border: 1px solid #f17828; border-radius: 14px; color: #ff912d; font-size: 12px; font-weight: 700; white-space: nowrap; }
-.add-to-list span { font-size: 18px; }
+.detail-save-button { display: block; min-height: 44px; margin-top: 20px; padding: 0 15px; border: 1px solid #f17828; border-radius: 13px; color: #ffb076; background: rgba(241,120,40,.1); font: inherit; font-size: 12px; font-weight: 750; cursor: pointer; }
+.detail-save-button:hover { background: rgba(241,120,40,.2); }
 .page-footer { display: flex; justify-content: space-between; gap: 18px; padding: 13px 2.6% 17px; border-top: 1px solid rgba(255, 255, 255, .08); color: #756d77; font-size: 8px; letter-spacing: 1.4px; }
 .page-footer a { color: inherit; text-decoration: none; }
 .page-footer a:hover { color: #ff9b50; }
@@ -185,7 +189,7 @@
   .movie-info h3 { font-size: 17px; }
   .movie-facts { gap: 5px; }
   .rating, .movie-year, .genre-chip { font-size: 10px; }
-  .add-to-list { right: 10px; bottom: 11px; min-height: 38px; padding-inline: 10px; font-size: 10px; }
+  .save-movie-button { top: 9px; right: 9px; min-height: 32px; padding-inline: 8px; font-size: 10px; }
 }
 @media (max-width: 850px) {
   .topbar { flex-wrap: wrap; gap: 12px; }
@@ -235,8 +239,7 @@
   .genre-chip { max-width: 46%; padding-inline: 6px; }
   .movie-info h3 { margin-top: 8px; font-size: clamp(13px, 3.8vw, 17px); }
   .movie-tagline { max-width: 100%; font-size: 10px; }
-  .add-to-list { right: 8px; bottom: 8px; min-height: 31px; gap: 4px; padding-inline: 8px; border-radius: 10px; font-size: 9px; }
-  .add-to-list span { font-size: 14px; }
+  .save-movie-button { top: 7px; right: 7px; min-height: 29px; gap: 4px; padding-inline: 7px; border-radius: 9px; font-size: 9px; }
   .page-footer { padding-inline: 1px; font-size: 6px; letter-spacing: .8px; }
   .movie-detail-overlay { padding: 12px; }
   .movie-detail-dialog { display: block; width: min(100%, 480px); max-height: 92vh; border-radius: 19px; }
