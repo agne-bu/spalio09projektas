@@ -1,0 +1,302 @@
+[
+  {
+    "id": "tt0214915",
+    "title": "Manichitrathazhu",
+    "year": "1993",
+    "rating": 8.7
+  },
+  {
+    "id": "tt0102926",
+    "title": "The Silence of the Lambs",
+    "year": "1991",
+    "rating": 8.6
+  },
+  {
+    "id": "tt0054215",
+    "title": "Psycho",
+    "year": "1960",
+    "rating": 8.5
+  },
+  {
+    "id": "tt0081505",
+    "title": "The Shining",
+    "year": "1980",
+    "rating": 8.4
+  },
+  {
+    "id": "tt0084787",
+    "title": "The Thing",
+    "year": "1982",
+    "rating": 8.2
+  },
+  {
+    "id": "tt8239946",
+    "title": "Tumbbad",
+    "year": "2018",
+    "rating": 8.2
+  },
+  {
+    "id": "tt0073195",
+    "title": "Jaws",
+    "year": "1975",
+    "rating": 8.1
+  },
+  {
+    "id": "tt0070047",
+    "title": "The Exorcist",
+    "year": "1973",
+    "rating": 8.1
+  },
+  {
+    "id": "tt0046911",
+    "title": "Diabolique",
+    "year": "1955",
+    "rating": 8.1
+  },
+  {
+    "id": "tt0016847",
+    "title": "Faust",
+    "year": "1926",
+    "rating": 8.1
+  },
+  {
+    "id": "tt0063522",
+    "title": "Rosemary's Baby",
+    "year": "1968",
+    "rating": 8.0
+  },
+  {
+    "id": "tt0010323",
+    "title": "The Cabinet of Dr. Caligari",
+    "year": "1920",
+    "rating": 8.0
+  },
+  {
+    "id": "tt0056687",
+    "title": "What Ever Happened to Baby Jane?",
+    "year": "1962",
+    "rating": 8.0
+  },
+  {
+    "id": "tt3461252",
+    "title": "The Blue Elephant",
+    "year": "2014",
+    "rating": 8.0
+  },
+  {
+    "id": "tt0012364",
+    "title": "The Phantom Carriage",
+    "year": "1921",
+    "rating": 8.0
+  },
+  {
+    "id": "tt10515086",
+    "title": "The Blue Elephant 2",
+    "year": "2019",
+    "rating": 8.0
+  },
+  {
+    "id": "tt0024216",
+    "title": "King Kong",
+    "year": "1933",
+    "rating": 7.9
+  },
+  {
+    "id": "tt0058279",
+    "title": "Kwaidan",
+    "year": "1964",
+    "rating": 7.9
+  },
+  {
+    "id": "tt5052448",
+    "title": "Get Out",
+    "year": "2017",
+    "rating": 7.8
+  },
+  {
+    "id": "tt0365748",
+    "title": "Shaun of the Dead",
+    "year": "2004",
+    "rating": 7.8
+  },
+  {
+    "id": "tt0093773",
+    "title": "Predator",
+    "year": "1987",
+    "rating": 7.8
+  },
+  {
+    "id": "tt37287335",
+    "title": "Obsession",
+    "year": "2025",
+    "rating": 7.8
+  },
+  {
+    "id": "tt1139797",
+    "title": "Let the Right One In",
+    "year": "2008",
+    "rating": 7.8
+  },
+  {
+    "id": "tt0063350",
+    "title": "Night of the Living Dead",
+    "year": "1968",
+    "rating": 7.8
+  },
+  {
+    "id": "tt0077402",
+    "title": "Dawn of the Dead",
+    "year": "1978",
+    "rating": 7.8
+  },
+  {
+    "id": "tt0013442",
+    "title": "Nosferatu",
+    "year": "1922",
+    "rating": 7.8
+  },
+  {
+    "id": "tt0026138",
+    "title": "Bride of Frankenstein",
+    "year": "1935",
+    "rating": 7.8
+  },
+  {
+    "id": "tt0022913",
+    "title": "Freaks",
+    "year": "1932",
+    "rating": 7.8
+  },
+  {
+    "id": "tt0058430",
+    "title": "Onibaba",
+    "year": "1964",
+    "rating": 7.8
+  },
+  {
+    "id": "tt0077651",
+    "title": "Halloween",
+    "year": "1978",
+    "rating": 7.7
+  },
+  {
+    "id": "tt0021884",
+    "title": "Frankenstein",
+    "year": "1931",
+    "rating": 7.7
+  },
+  {
+    "id": "tt0049366",
+    "title": "Invasion of the Body Snatchers",
+    "year": "1956",
+    "rating": 7.7
+  },
+  {
+    "id": "tt0055018",
+    "title": "The Innocents",
+    "year": "1961",
+    "rating": 7.7
+  },
+  {
+    "id": "tt27431598",
+    "title": "Bramayugam",
+    "year": "2024",
+    "rating": 7.7
+  },
+  {
+    "id": "tt32362695",
+    "title": "Sarvam Maya",
+    "year": "2025",
+    "rating": 7.7
+  },
+  {
+    "id": "tt0018528",
+    "title": "The Unknown",
+    "year": "1927",
+    "rating": 7.7
+  },
+  {
+    "id": "tt0122136",
+    "title": "Black Cat",
+    "year": "1968",
+    "rating": 7.7
+  },
+  {
+    "id": "tt0144084",
+    "title": "American Psycho",
+    "year": "2000",
+    "rating": 7.6
+  },
+  {
+    "id": "tt0387564",
+    "title": "Saw",
+    "year": "2004",
+    "rating": 7.6
+  },
+  {
+    "id": "tt0230600",
+    "title": "The Others",
+    "year": "2001",
+    "rating": 7.6
+  },
+  {
+    "id": "tt5700672",
+    "title": "Train to Busan",
+    "year": "2016",
+    "rating": 7.6
+  },
+  {
+    "id": "tt0091064",
+    "title": "The Fly",
+    "year": "1986",
+    "rating": 7.6
+  },
+  {
+    "id": "tt0056869",
+    "title": "The Birds",
+    "year": "1963",
+    "rating": 7.6
+  },
+  {
+    "id": "tt3416742",
+    "title": "What We Do in the Shadows",
+    "year": "2014",
+    "rating": 7.6
+  },
+  {
+    "id": "tt0092991",
+    "title": "Evil Dead II",
+    "year": "1987",
+    "rating": 7.6
+  },
+  {
+    "id": "tt35538033",
+    "title": "Resident Evil",
+    "year": "2026",
+    "rating": 7.6
+  },
+  {
+    "id": "tt0047034",
+    "title": "Godzilla",
+    "year": "1954",
+    "rating": 7.6
+  },
+  {
+    "id": "tt0024184",
+    "title": "The Invisible Man",
+    "year": "1933",
+    "rating": 7.6
+  },
+  {
+    "id": "tt0054167",
+    "title": "Peeping Tom",
+    "year": "1960",
+    "rating": 7.6
+  },
+  {
+    "id": "tt0053459",
+    "title": "Eyes Without a Face",
+    "year": "1960",
+    "rating": 7.6
+  }
+]
