@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 900" fill="none">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#100b18"/><stop offset=".42" stop-color="#261326"/><stop offset=".76" stop-color="#391a24"/><stop offset="1" stop-color="#100b13"/>
+    </linearGradient>
+    <radialGradient id="moon" cx="0" cy="0" r="1" gradientTransform="matrix(0 250 -250 0 1320 235)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffcf70"/><stop offset=".53" stop-color="#ff762d"/><stop offset=".78" stop-color="#d34b2c"/><stop offset="1" stop-color="#9d342d" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="mist" cx="0" cy="0" r="1" gradientTransform="matrix(580 0 0 230 1050 670)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#e35224" stop-opacity=".58"/><stop offset="1" stop-color="#a32e36" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ground" x1="0" y1="580" x2="0" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#24111b" stop-opacity="0"/><stop offset=".38" stop-color="#171018"/><stop offset="1" stop-color="#0a080e"/>
+    </linearGradient>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="16"/></filter>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="5"/></filter>
+  </defs>
+  <path fill="url(#sky)" d="M0 0h1800v900H0z"/>
+  <circle cx="1320" cy="235" r="230" fill="url(#moon)" opacity=".93"/>
+  <circle cx="1320" cy="235" r="160" fill="#ff8c36" opacity=".78"/>
+  <circle cx="1320" cy="235" r="148" fill="#e85a2d"/>
+  <path d="M1217 139c28-20 56-14 69 3 12 16 0 31-22 43-24 14-34 32-27 50 8 22-1 35-23 32-24-3-37-24-34-52 2-31 12-59 37-76Zm149 83c19-16 42-14 55-1 12 12 6 29-14 40-18 10-30 25-26 42 4 15-5 27-21 26-21-1-34-17-31-38 3-27 15-53 37-69Z" fill="#a73731" opacity=".28"/>
+  <ellipse cx="1060" cy="677" rx="660" ry="247" fill="url(#mist)" filter="url(#soft)"/>
+
+  <!-- distant bare forest -->
+  <g stroke="#100d16" stroke-width="13" stroke-linecap="round" opacity=".78">
+    <path d="M46 684V254m0 179-95-108m95 67 91-132M46 376l-60-97m60 54 69-102M171 689V345m0 182-76-93m76 42 92-116m-92 45 61-117M320 694V282m0 220-91-111m91 64 78-128m-78 31-54-100M1480 687V256m0 190-94-120m94 52 94-149m-94 42-50-102m165 518V329m0 170-70-98m70 38 96-119m-96 45 62-96M1731 694V213m0 206-96-117m96 58 69-121m-69 35-42-87"/>
+    <path d="m-35 325 83 23 52-45m-61 97 66-9 53-48m-9 112 42-49 47 1M117 416l-50-66-55-13m149 250-52-59-65-2m210 2 34-66 58-27m-8 104 60-67 46-4m904-284 57 26 55-47m-96 99 83-14 40-43m-8 91 60-54 56 6m-99 124 63-48 58 8m-83 88 82-60 74 6m-83-246-45-58-57-7m235 366 51-53 45 3m-24-94 49-56 48-10m-75-97-52-68-52-7m122 330 53-52 62 4"/>
+  </g>
+
+  <!-- castle silhouette -->
+  <g fill="#100c17">
+    <path d="M978 654V492l30-26 33 26v162h-63Zm270 20V430l35-31 39 31v244h-74Zm117-10V468l30-27 32 27v196h-62Zm-207 10V376l30-32 36 32v298h-66Z"/>
+    <path d="M1004 476v-86l18-61 22 61v86h-40Zm273-53V327l24-93 28 93v96h-52Zm116 35v-90l20-70 22 70v90h-42Zm-209-89v-89l27-92 29 92v89h-56Z"/>
+    <path d="m987 494 38-40 36 40h-74Zm242-68 47-50 49 50h-96Zm118 33 34-35 34 35h-68Zm-207-87 47-47 48 47h-95Z"/>
+    <path d="M963 654V514l76-36 73 36v140H963Zm106 0V433l109-46 111 46v221h-220Zm203 0V503l72-33 71 33v151h-143Z"/>
+    <path d="M936 654h512v50H936z"/>
+  </g>
+  <g fill="#ff7133" opacity=".95">
+    <path d="M1007 541h16v37h-16zm37 0h16v37h-16zm119-48h17v39h-17zm45 0h17v39h-17zm45 0h17v39h-17zm96 49h16v38h-16zm39 0h16v38h-16z"/>
+    <path d="M1160 581h20v73h-20z" fill="#f36a32"/>
+  </g>
+  <g fill="#ff7a32" opacity=".34" filter="url(#glow)">
+    <path d="M1005 535h62v62h-62zm194-61h124v68h-124zm140 58h68v60h-68zM1154 571h34v91h-34z"/>
+  </g>
+
+  <!-- flying bats -->
+  <g fill="#0a0911">
+    <path d="M1082 205c-24-29-50-30-76-10l-24-4 10 23-18 20 33-5c20 15 38 16 55 3l25 21 25-21c17 13 35 12 55-3l33 5-18-20 10-23-24 4c-26-20-52-19-76 10-3-18-7-29-10-34-3 5-7 16-10 34Z"/>
+    <path d="M1491 292c-17-20-35-21-54-7l-17-3 7 16-13 14 23-4c14 11 27 11 39 2l18 15 18-15c12 9 25 9 39-2l23 4-13-14 7-16-17 3c-19-14-37-13-54 7-2-13-5-21-7-25-2 4-5 12-7 25Z"/>
+    <path d="M843 332c-12-15-26-15-40-5l-13-2 5 12-10 11 17-3c11 8 20 8 29 1l13 11 13-11c9 7 18 7 29-1l17 3-10-11 5-12-13 2c-14-10-28-10-40 5-2-9-4-15-5-18-1 3-3 9-5 18Z"/>
+  </g>
+
+  <!-- pumpkins at the bottom of the scene -->
+  <g>
+    <ellipse cx="1060" cy="700" rx="65" ry="20" fill="#ff642b" opacity=".36" filter="url(#glow)"/>
+    <path d="M1018 669c5-27 27-42 46-35 20-9 43 7 49 34 6 29-10 53-48 54-38-1-53-24-47-53Z" fill="#e75a20"/>
+    <path d="M1065 631c-2-12 5-20 14-19-5 7-5 13 2 18" stroke="#323522" stroke-width="7" stroke-linecap="round"/>
+    <path d="m1035 675 17 13-4-20 13 9 12-10 2 18 17-11-7 27h-45z" fill="#ffbf53"/>
+    <path d="M1107 680c6-24 26-36 44-30 17-8 37 7 42 29 5 25-9 45-43 46-34-1-48-21-43-45Z" fill="#bd451f"/>
+    <path d="M1148 648c-2-10 4-17 12-16-4 6-4 11 2 15" stroke="#353323" stroke-width="6" stroke-linecap="round"/>
+    <path d="m1122 686 15 11-3-18 12 8 11-9 2 16 14-9-6 23h-39z" fill="#ff9b3b"/>
+  </g>
+
+  <path fill="url(#ground)" d="M0 566h1800v334H0z"/>
+  <path d="M0 727c182-86 309-35 455-82 141-46 240-51 361 6 127 60 199 4 336-18 161-25 235 82 384 33 108-36 179-28 264 9v225H0V727Z" fill="#100d16"/>
+  <path d="M0 786c191-54 281 14 441-20 160-34 270 24 392 5 166-26 282-56 438 11 151 65 321-5 529-27v145H0V786Z" fill="#0a080d" opacity=".95"/>
+</svg>
